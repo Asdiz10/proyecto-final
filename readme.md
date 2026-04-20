@@ -12,10 +12,6 @@
 
 
 
-
-
-
-
 ## Planificació del projecte (Gantt)
 ```mermaid
 gantt
