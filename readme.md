@@ -1,24 +1,24 @@
 ## Planificació del projecte (Gantt)
 ```mermaid
 gantt
-    title Cronograma de Proyecto Web
+    title Planificación del Proyecto - Cronograma
     dateFormat  YYYY-MM-DD
     axisFormat  %d/%m
-    tickInterval 1day
+    tickInterval 1week
 
-    section Investigación
-    Definir alcance          :done,    des1, 2026-04-20, 2d
-    Análisis de competencia  :active,  des2, after des1, 3d
-
-    section Diseño
-    Wireframes               :         des3, 2026-04-25, 4d
-    Prototipo alta fidelidad :crit,    des4, after des3, 5d
-
-    section Desarrollo
-    Frontend                 :         dev1, 2026-05-02, 7d
-    Backend                  :         dev2, after des4, 7d
-
-    section Lanzamiento
-    QA y Pruebas             :         rel1, after dev1, 3d
-    Publicación              :         rel2, 2026-05-15, 1d
-    ```
+    section PLAN DE EMPRESA
+    Refinar la Idea y Estructura de la web :active, a1, 2026-04-20, 2026-04-24
+    
+    section DESARROLLO WEB
+    Desarrollo de la web (HTML/CSS/JS)    :a2, 2026-04-27, 2026-05-08
+    Configuración de Raspberry Pi y Servidor :a3, 2026-05-11, 2026-05-15
+    
+    section DOCUMENTACIÓN
+    Cierre de la documentación final       :a4, 2026-05-18, 2026-05-22
+    
+    section MEJORA
+    Mejorar el proyecto (Diseño/Errores)   :a5, 2026-05-25, 2026-05-29
+    
+    section HITO
+    PRESENTACIÓN DEL PROYECTO              :milestone, m1, 2026-06-01, 2026-06-01
+```
