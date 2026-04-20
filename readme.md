@@ -1,3 +1,21 @@
+# C+
+
+
+## Adam - David García
+
+
+### Objectius
+1. Redactar el pla d'empresa
+2. Creació de la app
+    - Creació del disseny
+    - Implementació de HTML,CSS,JS
+
+
+
+
+
+
+
 ## Planificació del projecte (Gantt)
 ```mermaid
 gantt
