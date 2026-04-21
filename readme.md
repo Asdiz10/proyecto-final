@@ -19,3 +19,9 @@
 - Gemini com a eina de revisió.
 - Duolingo com a referència de la aplicació web.
 - Raspberry Pi per allotjar la web.
+
+
+### Desenvolupament i desplegamnet (app i servidor)
+
+
+### Planificació (històries, sprints i diagrama de Gantt)
