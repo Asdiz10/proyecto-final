@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,7 +8,7 @@
   <body class="">
     <header class="flex justify-between py-10 bg-slate-900 px-58">
       <div
-        class="flex text-neutral-50 font-extrabold text-3xl cursor-pointer tracking-wider"
+        class="transition-all flex text-neutral-50 font-extrabold text-3xl cursor-pointer tracking-wider hover:scale-110"
       >
         <h1>Conduce<span class="drop-shadow-[0_0_3px_rgba(255,223,32,0.8)] text-yellow-400">+</span></h1>
       </div>
@@ -16,14 +16,15 @@
         <ul class="flex gap-6">
           <li>
             <button
-              class="px-4 py-2 bg-neutral-50 rounded font-semibold cursor-pointer"
+              class="transition-all px-4 py-2 text-slate-900 bg-neutral-50 rounded font-semibold cursor-pointer hover:scale-105 hover:bg-slate-900 hover:text-neutral-50"
             >
               Sobre nosotros
             </button>
           </li>
           <li>
             <button
-              class="px-4 py-2 bg-yellow-400 text-neutral-50 rounded font-bold tracking-wide cursor-pointer"
+              class="transition-all px-4 py-2 bg-yellow-400 text-neutral-50 rounded font-bold tracking-wide cursor-pointer hover:scale-105
+              hover:bg-neutral-50 hover:text-yellow-400"
             >
               Acceder
             </button>
@@ -44,7 +45,7 @@
           ¡APRUEBA EL NUEVO EXAMEN DE LA DGT!
         </h1>
         <button
-          class="px-4 py-2 text-2xl bg-yellow-400 rounded text-neutral-50 font-bold cursor-pointer absolute self-center mt-65 drop-shadow-[0_0_4px_rgba(255,223,32,1)]"
+          class="transition-all px-5 py-3 text-2xl bg-yellow-400 rounded text-neutral-50 font-bold cursor-pointer absolute self-center mt-65 hover:scale-105 hover:bg-neutral-50 hover:text-yellow-400"
         >
           Empieza a estudiar
         </button>
@@ -67,7 +68,7 @@
         </div>
       </div>
     </main>
-    <footer></footer>
+    <footer class="h-120"></footer>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </body>
 </html>
