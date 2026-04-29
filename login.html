@@ -1,39 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-
-</head>
-<body class="bg-blue-900 m-30">   
-    
-     <div class="flex ">
-        <div class="border border-gray-200 rounded-lg p-16 px-23 max-w-md mx-auto bg-slate-900">
-          <div class="mb-4 te">
-            <div class="text-center">
-              <h1 class="text-5xl font-extrabold cursor-default text-neutral-50 pb-5">C<span class="drop-shadow-[0_0_1.5px_rgba(255,223,32,0.8)] text-amber-500 ">+</span>
-              </h1>
-            </div>
-              <br>
-              <p class="text-neutral-100 text-sm">Correo electronico</p>
-              <input type="email" class="border rounded pl-1 mb-10 text-white w-full bg-slate-800">
-              <br>
-              <p class="text-neutral-100 text-sm">Contraseña</p>
-              <input type="password" class="border rounded pl-1 mb-10 text-white w-full bg-slate-800">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicia Sesión</title>
+    <link rel="icon" href="imagenes/logo.png" />
+  </head>
+  <body class="bg-blue-900 m-30">
+    <div class="flex w-auto items-center pt-10">
+      <div
+        class="border rounded-lg p-16 px-23 max-w-md mx-auto bg-slate-900 shadow-black shadow-lg scale-125"
+      >
+        <div class="mb-4">
+          <div class="text-center">
+            <h1
+              class="text-5xl font-extrabold cursor-default text-neutral-50 pb-5"
+            >
+              C<span
+                class="drop-shadow-[0_0_1.5px_rgba(255,223,32,0.8)] text-amber-500"
+                >+</span
+              >
+            </h1>
           </div>
+          <br />
+          <p class="text-neutral-100 text-sm">Correo electronico</p>
+          <input
+            type="email"
+            class="border rounded pl-1 mb-10 text-white w-full bg-slate-800"
+          />
+          <br />
+          <p class="text-neutral-100 text-sm">Contraseña</p>
+          <input
+            type="password"
+            class="border rounded pl-1 mb-10 text-white w-full bg-slate-800"
+          />
+        </div>
+        <button
+          class="transition-all w-50 bg-blue-800 text-white font-bold py-2 rounded hover:bg-amber-400 hover:text-slate-950 cursor-pointer text-sm"
+        >
+          Iniciar Sesión
+        </button>
+        <hr class="mt-5 border-neutral-600" />
+        <br />
+        <div class="text-center">
           <button
-            class="transition-all w-50 bg-blue-800 text-white font-bold py-2 rounded hover:bg-amber-400 hover:text-slate-950 cursor-pointer text-sm">
-            Iniciar Sesión
-          </button>
-          <hr class="mt-5">
-          <br>
-          <button class="flex text-white transition-all w-50 p-2 bg-slate-800 rounded text-xs gap-2 justify-center">
-            <img src="imagenes/icons8-google.svg" alt="" class="w-5">
-            Continue con Google
-          </button>
-          </div>
+          class="flex text-white transition-all w-50 p-2 bg-slate-800 rounded text-xs gap-2 justify-center"
+        >
+          <img src="imagenes/icons8-google.svg" alt="" class="w-5" />
+          Continue con Google
+        </button>
+        <p class="text-white text-sm pt-3">
+          Eres nuevo?
+          <a
+            href="register.html"
+            class="text-blue-400 underline hover:text-amber-500"
+            >crea una cuenta</a
+          >
+        </p>
+        </div>
       </div>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</body>
-</html> 
+  </body>
+</html>
