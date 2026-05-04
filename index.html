@@ -6,8 +6,9 @@
     <title>Conduce+</title>
     <link rel="icon" href="imagenes/logo.png" />
     <style>
-      /* Ocultar barra de scroll manteniendo funcionalidad preguntado a la IA*/
-      html, body {
+      /*Ocultar barra de scroll manteniendo funcionalidad preguntado a la IA (CoPilot)*/
+      html,
+      body {
         scrollbar-width: none;
         -ms-overflow-style: none;
       }
@@ -17,7 +18,9 @@
       }
     </style>
   </head>
-  <body class="bg-blue-950 scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
+  <body
+    class="bg-blue-950 scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]"
+  >
     <header
       class="fixed w-full z-999 flex justify-between py-10 bg-slate-900/95 px-58"
     >
@@ -32,18 +35,19 @@
         </h1>
       </div>
       <nav class="flex gap-6">
-        <button onclick="window.location.href='sobrenosotros.html'"
+        <button
+          onclick="window.location.href = 'sobrenosotros.html'"
           class="transition-all px-4 py-2 text-neutral-50 bg-slate-900 rounded font-semibold cursor-pointer hover:scale-105 hover:bg-neutral-50 hover:text-slate-900"
         >
           Sobre nosotros
         </button>
 
-        
-        <button onclick="window.location.href='login.html'"
-          class="transition-all px-4 py-2 bg-amber-500 text-neutral-50 rounded font-bold tracking-wide cursor-pointer hover:scale-105 hover:bg-neutral-50 hover:text-amber-500">
+        <button
+          onclick="window.location.href = 'login.html'"
+          class="transition-all px-4 py-2 bg-amber-500 text-neutral-50 rounded font-bold tracking-wide cursor-pointer hover:scale-105 hover:bg-neutral-50 hover:text-amber-500"
+        >
           Acceder
         </button>
-      
       </nav>
     </header>
     <main class="px-45 -15">
@@ -58,22 +62,33 @@
         >
           ¡APRUEBA EL NUEVO EXAMEN DE LA DGT!
         </h1>
-        <button onclick="window.location.href='register.html'"
+        <button
+          onclick="window.location.href = 'register.html'"
           class="mb-35 scale-130 transition-all px-6 py-4 text-2xl bg-amber-500 rounded text-neutral-50 font-bold cursor-pointer absolute self-center mt-75 hover:scale-135 hover:bg-neutral-50 hover:text-amber-500"
         >
           Empieza a estudiar
         </button>
-        <h2 class="cursor-default mb-22 scale-130 transition-all px-6 py-4 text-xl text-neutral-50 font-bold absolute mt-134" onclick="window.location.href='index.html#precios'">
+        <h2
+          class="cursor-default mb-22 scale-130 transition-all px-6 py-4 text-xl text-neutral-50 font-bold absolute mt-134"
+          onclick="window.location.href = 'index.html#precios'"
+        >
           Escoge tu plan
         </h2>
-        <button class="cursor-pointer mb-22 scale-130 transition-all px-2.5 py-1 text-xl text-blue-950 font-bold absolute mt-153 rounded-full bg-neutral-50" onclick="window.location.href='index.html#precios'">
+        <button
+          class="cursor-pointer mb-22 scale-130 transition-all px-2.5 py-1 text-xl text-blue-950 font-bold absolute mt-153 rounded-full bg-neutral-50"
+          onclick="window.location.href = 'index.html#precios'"
+        >
           🡇
         </button>
       </div>
       <div class="justify-items-center py-11">
-        <p class="p-6 my-5 text-neutral-50 font-medium text-2xl text-center bg-slate-900/95 rounded-lg" id="precios">
-          <span class="text-4xl text-amber-500">"</span>Adelántate a los demás y aprobar a la primera el nuevo formato de el
-          examen teórico de la DGT<span class="text-4xl text-amber-500">"</span>
+        <p
+          class="p-6 my-5 text-neutral-50 font-medium text-2xl text-center bg-slate-900/95 rounded-lg"
+          id="precios"
+        >
+          <span class="text-4xl text-amber-500">"</span>Adelántate a los demás y
+          aprobar a la primera el nuevo formato de el examen teórico de la
+          DGT<span class="text-4xl text-amber-500">"</span>
         </p>
       </div>
       <div class="-mx-45 flex justify-around px-56 py-7">
@@ -163,7 +178,86 @@
         </div>
       </div>
     </main>
-    <footer class="h-120"></footer>
+    <footer class="bg-slate-900/95 text-neutral-50 mt-14">
+      <div class="max-w-[88.5rem] mx-auto px-8 py-12">
+        <div class="grid gap-10 md:grid-cols-3">
+          <div>
+            <h2 class="text-2xl font-extrabold tracking-wider">
+              Conduce<span class="text-amber-500">+</span>
+            </h2>
+            <p class="mt-4 text-sm text-gray-300 leading-6 max-w-sm">
+              Tu apoyo seguro para aprobar el nuevo examen de la DGT con
+              contenidos claros, actualizados y sin perder el estilo.
+            </p>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Enlaces rápidos</h3>
+            <ul class="space-y-3 text-gray-300">
+              <li>
+                <button
+                  onclick="window.location.href = 'index.html#precios'"
+                  class="hover:text-amber-500 transition"
+                >
+                  Planes
+                </button>
+              </li>
+              <li>
+                <button
+                  onclick="window.location.href = 'sobrenosotros.html'"
+                  class="hover:text-amber-500 transition"
+                >
+                  Sobre nosotros
+                </button>
+              </li>
+              <li>
+                <button
+                  onclick="window.location.href = 'login.html'"
+                  class="hover:text-amber-500 transition"
+                >
+                  Acceder
+                </button>
+              </li>
+              <li>
+                <button
+                  onclick="window.location.href = 'register.html'"
+                  class="hover:text-amber-500 transition"
+                >
+                  Registrar
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-xl font-bold mb-4">Contacto</h3>
+            <p class="text-gray-300">
+              ¿Dudas? Escríbenos y te ayudamos a preparar tu examen.
+            </p>
+            <div class="mt-5 space-y-2 text-sm text-gray-400">
+              <p>
+                Email:
+                <span class="text-neutral-50">contacto@conduceplus.com</span>
+              </p>
+              <p>
+                Teléfono: <span class="text-neutral-50">+34 600 123 456</span>
+              </p>
+              <p>
+                Horario:
+                <span class="text-neutral-50">Lun - Vie de 09:00 - 18:00</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="mt-10 border-t border-slate-700 pt-6 text-sm text-gray-400 flex flex-col gap-3 md:flex-row md:justify-between md:items-center"
+        >
+          <p>© 2026 Conduce+. Todos los derechos reservados.</p>
+          <p>Diseñado para aprobar con estilo y claridad.</p>
+        </div>
+      </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </body>
 </html>
