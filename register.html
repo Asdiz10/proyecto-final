@@ -1,13 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Regsitrate   </title>
     <link rel="icon" href="imagenes/logo.png" />
     <style>
-      /* Ocultar barra de scroll manteniendo funcionalidad */
-      html, body {
+      /* Ocultar barra de scroll manteniendo funcionalidad preguntado a la IA*/
+      html,
+      body {
         scrollbar-width: none; /* Firefox */
         -ms-overflow-style: none; /* IE y Edge */
       }
@@ -16,17 +17,13 @@
         display: none; /* Chrome, Safari y Edge */
       }
     </style>
-</head>
-<body class="w-screen">
-   <main class="h-screen w-full flex">
-
-    <section class="md:w-1/2 bg-blue-900">
-        <img src="imagenes/carretera-1.avif" alt="" class="h-screen object-cover blur-sm opacity-70 ">
-    </section>
-
-
-    <section class="md:w-1/2  border-2 bg-black flex justify-center flex-col p-20">
-      <div class="mb-4 border-white flex justify-center">
+  </head>
+  <body class="bg-blue-900 min-h-screen flex items-center justify-center p-4">
+    <div class="flex w-auto items-center justify-center">
+      <div
+        class="border rounded-lg p-16 px-23 max-w-md mx-auto bg-slate-900 shadow-black shadow-lg scale-117"
+      >
+        <div class="mb-4">
           <div class="text-center">
             <h1
               class="text-5xl font-extrabold cursor-default text-neutral-50 pb-5"
@@ -38,37 +35,50 @@
             </h1>
           </div>
           <br />
-          <div class="flex flex-col p-10 border-white">
-                <label class="text-neutral-100 text-sm block" for="correo-id"
-                >Correo electronico</label
-              >
-              <input
-                id="correo-id"
-                type="email"
-                class="border rounded pl-1 mb-10 text-white w-50 bg-slate-800"
-              />
-              <br />
-              <label class="text-neutral-100 text-sm block" for="password-id"
-                >Contraseña</label
-              >
-              <input
-                id="password-id"
-                type="password"
-                class="border rounded pl-1 mb-10 text-white w-50 bg-slate-800"
-              />
-            
-            <button
-              class="transition-all w-50 bg-blue-800 text-white font-bold py-2 rounded hover:bg-amber-400 hover:text-slate-950 cursor-pointer text-sm"
-            >
-              Registrate
-            </button>
-            <hr class="mt-5 border-neutral-600" />
-            <br />
-          </div>
-          
-
-
-        <div class="text-center flex justify-center gap-2">
+          <label class="text-neutral-100 text-sm block" for="correo-id"
+            >Nombre</label
+          >
+          <input
+            id="nombre-pers"
+            type="text"
+            class="border rounded pl-1 mb-10 text-white w-full bg-slate-800"
+          />
+          <br />
+          <label class="text-neutral-100 text-sm block" for="correo-id"
+            >Apellido</label
+          >
+          <input
+            id="apellido.pers"
+            type="text"
+            class="border rounded pl-1 mb-10 text-white w-full bg-slate-800"
+          />
+          <br />
+          <label class="text-neutral-100 text-sm block" for="correo-id"
+            >Correo electronico</label
+          >
+          <input
+            id="correo-id"
+            type="email"
+            class="border rounded pl-1 mb-10 text-white w-full bg-slate-800"
+          />
+          <br />
+          <label class="text-neutral-100 text-sm block" for="password-id"
+            >Contraseña</label
+          >
+          <input
+            id="password-id"
+            type="password"
+            class="border rounded pl-1 mb-10 text-white w-full bg-slate-800"
+          />
+        </div>
+        <button
+          class="transition-all w-50 bg-blue-800 text-white font-bold py-2 rounded hover:bg-amber-400 hover:text-slate-950 cursor-pointer text-sm"
+        >
+          Iniciar Sesión
+        </button>
+        <hr class="mt-5 border-neutral-600" />
+        <br />
+        <div class="text-center">
           <button
             class="flex text-white transition-all w-50 p-2 bg-slate-800 rounded text-xs gap-2 justify-center"
           >
@@ -76,20 +86,16 @@
             Continue con Google
           </button>
           <p class="text-white text-sm pt-3">
-            ya tienes una cuenta?
+            Ya tienes cuenta?
             <a
               href="login.html"
               class="text-blue-400 underline hover:text-amber-500"
-              >Inicia sesion</a
+              >inicia sesión</a
             >
           </p>
         </div>
       </div>
     </div>
-
-    </section>
-   </main>
-
-   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </body>
 </html>
