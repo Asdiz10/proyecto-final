@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inicio de Usuario</title>
+    <link rel="icon" href="imagenes/logo.png" />
+    <style>
+      /* Ocultar barra de scroll manteniendo funcionalidad */
+      html,
+      body {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE y Edge */
+      }
+      html::-webkit-scrollbar,
+      body::-webkit-scrollbar {
+        display: none; /* Chrome, Safari y Edge */
+      }
+    </style>
+  </head>
+  <body class="bg-blue-900 min-h-screen flex items-center justify-center p-4">
+    <div
+      class="border border-slate-800 rounded-3xl p-10 max-w-3xl mx-auto bg-slate-900 shadow-black/20 shadow-lg"
+    >
+      <div class="flex items-center justify-between mb-8 gap-4">
+        <div>
+          <h1 class="text-4xl font-extrabold text-neutral-50 pb-3">
+            Inicio de usuario
+          </h1>
+          <p class="text-slate-300 text-sm">
+            Selecciona el curso que quieres realizar y continúa con tu
+            aprendizaje.
+          </p>
+        </div>
+        <button
+          onclick="window.location.href = 'login.html'"
+          class="text-sm text-neutral-50 bg-blue-800 px-4 py-2 rounded-full hover:bg-amber-400 hover:text-slate-950 transition-all"
+        >
+          Cerrar sesión
+        </button>
+      </div>
+
+      <div class="grid gap-4 sm:grid-cols-2">
+        <button
+          id="curso-tradicional"
+          class="border border-slate-700 rounded-3xl p-6 bg-blue-950 text-left text-neutral-50 transition-all hover:bg-blue-800"
+        >
+          <h2 class="text-xl font-semibold">Curso tradicional</h2>
+          <p class="mt-2 text-sm text-slate-400">
+            Preguntas al estilo tradicional, la pregunta es solamente texto.
+          </p>
+        </button>
+
+        <button
+          id="curso-videos"
+          class="border border-slate-700 rounded-3xl p-6 bg-blue-950 text-left text-neutral-50 transition-all hover:bg-blue-800"
+        >
+          <h2 class="text-xl font-semibold">Curso con videos</h2>
+          <p class="mt-2 text-sm text-slate-400">
+            Preguntas que incluyen videos, orientado a estudiar el nuevo modelo de exámen.
+          </p>
+        </button>
+      </div>
+
+      <div class="mt-8 p-6 rounded-3xl bg-blue-950 border border-slate-700">
+        <p id="seleccion" class="text-slate-300 text-sm mb-4">
+          Selecciona una opción para continuar.
+        </p>
+        <button
+          id="btnContinuar"
+          class="transition-all bg-amber-500 text-slate-950 font-bold py-2 px-6 rounded-full hover:bg-amber-400 cursor-pointer"
+        >
+          Continuar
+        </button>
+      </div>
+    </div>
+
+    <script>
+      const btnTradicional = document.querySelector("#curso-tradicional");
+      const btnVideos = document.querySelector("#curso-videos");
+      const seleccion = document.querySelector("#seleccion");
+      let curso = "";
+
+      function marcarCurso(opcion) {
+        curso = opcion;
+        btnTradicional.classList.remove("ring-2", "ring-amber-400");
+        btnVideos.classList.remove("ring-2", "ring-amber-400");
+        if (opcion === "tradicional") {
+          btnTradicional.classList.add("ring-2", "ring-amber-400");
+          seleccion.textContent = "Has elegido el Curso tradicional.";
+        } else {
+          btnVideos.classList.add("ring-2", "ring-amber-400");
+          seleccion.textContent = "Has elegido el Curso con videos.";
+        }
+      }
+
+      btnTradicional.addEventListener("click", () =>
+        marcarCurso("tradicional"),
+      );
+      btnVideos.addEventListener("click", () => marcarCurso("videos"));
+
+      document.querySelector("#btnContinuar").addEventListener("click", () => {
+        if (!curso) {
+          alert("Por favor, selecciona un curso antes de continuar.");
+          return;
+        }
+        alert(
+          "Continuando con el " +
+            (curso === "tradicional"
+              ? "Curso tradicional"
+              : "Curso con videos") +
+            ".",
+        );
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </body>
+</html>

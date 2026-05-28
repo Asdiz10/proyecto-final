@@ -35,25 +35,34 @@
             </h1>
           </div>
           <br />
-          <label class="text-neutral-100 text-sm block" for="correo-id"
+          <label
+            id="labelMail"
+            class="text-neutral-100 text-sm block"
+            for="correo-id"
             >Correo electronico</label
           >
           <input
+            placeholder=""
             id="correo-id"
             type="email"
             class="border rounded pl-1 mb-10 text-white w-full bg-slate-800"
           />
           <br />
-          <label class="text-neutral-100 text-sm block" for="password-id"
+          <label
+            id="labelPassword"
+            class="text-neutral-100 text-sm block"
+            for="password-id"
             >Contraseña</label
           >
           <input
+            placeholder=""
             id="password-id"
             type="password"
             class="border rounded pl-1 mb-10 text-white w-full bg-slate-800"
           />
         </div>
         <button
+          id="btnEnviar"
           class="transition-all w-50 bg-blue-800 text-white font-bold py-2 rounded hover:bg-amber-400 hover:text-slate-950 cursor-pointer text-sm"
         >
           Iniciar Sesión
@@ -78,6 +87,57 @@
         </div>
       </div>
     </div>
+    <script>
+      let inputMail = document.querySelector("#correo-id");
+      let inputPassword = document.querySelector("#password-id");
+      let labelMail = document.querySelector("#labelMail");
+      let labelPassword = document.querySelector("#labelPassword");
+      let btnEnviar = document.querySelector("#btnEnviar");
+      function envioForm() {
+        if (inputMail.value === "") {
+          labelMail.classList.add("text-red-300");
+          labelMail.classList.remove("text-neutral-100");
+          labelPassword.classList.add("text-red-300");
+          labelPassword.classList.remove("text-neutral-100");
+          inputMail.classList.add("border-red-300");
+          inputMail.classList.remove("border-neutral-100");
+          inputPassword.classList.add("border-red-300");
+          inputPassword.classList.remove("border-neutral-100");
+          inputMail.placeholder = "Rellene la casilla";
+          inputPassword.placeholder = "Rellene la casilla";
+          inputMail.classList.add("placeholder-red-200");
+          inputPassword.classList.add("placeholder-red-200");
+          alert("HAS DEJADO CASILLAS VACIAS");
+        } else if (inputPassword.value === "") {
+          labelMail.classList.add("text-red-300");
+          labelMail.classList.remove("text-neutral-100");
+          labelPassword.classList.add("text-red-300");
+          labelPassword.classList.remove("text-neutral-100");
+          inputMail.classList.add("border-red-300");
+          inputMail.classList.remove("border-neutral-100");
+          inputPassword.classList.add("border-red-300");
+          inputPassword.classList.remove("border-neutral-100");
+          inputMail.placeholder = "Rellene la casilla";
+          inputPassword.placeholder = "Rellene la casilla";
+          inputMail.classList.add("placeholder-red-200");
+          inputPassword.classList.add("placeholder-red-200");
+          alert("HAS DEJADO CASILLAS VACIAS");
+        } else {
+          window.location.href = "cursosusuario.html";
+        }
+      }
+      btnEnviar.addEventListener("click", envioForm);
+      inputMail.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          envioForm();
+        }
+      });
+      inputPassword.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          envioForm();
+        }
+      });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </body>
 </html>

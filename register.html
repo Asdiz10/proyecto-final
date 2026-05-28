@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Regsitrate   </title>
+    <title>Regsitrate</title>
     <link rel="icon" href="imagenes/logo.png" />
     <style>
       /* Ocultar barra de scroll manteniendo funcionalidad preguntado a la IA*/
@@ -35,46 +35,63 @@
             </h1>
           </div>
           <br />
-          <label class="text-neutral-100 text-sm block" for="correo-id"
+          <label
+            id="labelNombre"
+            class="text-neutral-100 text-sm block"
+            for="nombre-id"
             >Nombre</label
           >
           <input
-            id="nombre-pers"
+            placeholder=""
+            id="nombre-id"
             type="text"
             class="border rounded pl-1 mb-10 text-white w-full bg-slate-800"
           />
           <br />
-          <label class="text-neutral-100 text-sm block" for="correo-id"
+          <label
+            id="labelApellido"
+            class="text-neutral-100 text-sm block"
+            for="apellido-id"
             >Apellido</label
           >
           <input
-            id="apellido.pers"
+            placeholder=""
+            id="apellido-id"
             type="text"
             class="border rounded pl-1 mb-10 text-white w-full bg-slate-800"
           />
           <br />
-          <label class="text-neutral-100 text-sm block" for="correo-id"
+          <label
+            id="labelMail"
+            class="text-neutral-100 text-sm block"
+            for="correo-id"
             >Correo electronico</label
           >
           <input
+            placeholder=""
             id="correo-id"
             type="email"
             class="border rounded pl-1 mb-10 text-white w-full bg-slate-800"
           />
           <br />
-          <label class="text-neutral-100 text-sm block" for="password-id"
+          <label
+            id="labelPassword"
+            class="text-neutral-100 text-sm block"
+            for="password-id"
             >Contraseña</label
           >
           <input
+            placeholder=""
             id="password-id"
             type="password"
             class="border rounded pl-1 mb-10 text-white w-full bg-slate-800"
           />
         </div>
         <button
+          id="btnEnviar"
           class="transition-all w-50 bg-blue-800 text-white font-bold py-2 rounded hover:bg-amber-400 hover:text-slate-950 cursor-pointer text-sm"
         >
-          Iniciar Sesión
+          Registrar
         </button>
         <hr class="mt-5 border-neutral-600" />
         <br />
@@ -96,6 +113,101 @@
         </div>
       </div>
     </div>
+    <script>
+      const inputNombre = document.querySelector("#nombre-id");
+      const inputApellido = document.querySelector("#apellido-id");
+      const inputMail = document.querySelector("#correo-id");
+      const inputPassword = document.querySelector("#password-id");
+      const labelNombre = document.querySelector("#labelNombre");
+      const labelApellido = document.querySelector("#labelApellido");
+      const labelMail = document.querySelector("#labelMail");
+      const labelPassword = document.querySelector("#labelPassword");
+      const btnEnviar = document.querySelector("#btnEnviar");
+
+      function envioForm() {
+        if (inputNombre.value === "") {
+          labelNombre.classList.add("text-red-300");
+          labelNombre.classList.remove("text-neutral-100");
+          labelApellido.classList.add("text-red-300");
+          labelApellido.classList.remove("text-neutral-100");
+          inputNombre.classList.add("border-red-300");
+          inputNombre.classList.remove("border-neutral-100");
+          inputApellido.classList.add("border-red-300");
+          inputApellido.classList.remove("border-neutral-100");
+          inputNombre.placeholder = "Rellene la casilla";
+          inputApellido.placeholder = "Rellene la casilla";
+          inputNombre.classList.add("placeholder-red-200");
+          inputApellido.classList.add("placeholder-red-200");
+          alert("HAS DEJADO CASILLAS VACIAS");
+        } else if (inputApellido.value === "") {
+          labelNombre.classList.add("text-red-300");
+          labelNombre.classList.remove("text-neutral-100");
+          labelApellido.classList.add("text-red-300");
+          labelApellido.classList.remove("text-neutral-100");
+          inputNombre.classList.add("border-red-300");
+          inputNombre.classList.remove("border-neutral-100");
+          inputApellido.classList.add("border-red-300");
+          inputApellido.classList.remove("border-neutral-100");
+          inputNombre.placeholder = "Rellene la casilla";
+          inputApellido.placeholder = "Rellene la casilla";
+          inputNombre.classList.add("placeholder-red-200");
+          inputApellido.classList.add("placeholder-red-200");
+          alert("HAS DEJADO CASILLAS VACIAS");
+        } else if (inputMail.value === "") {
+          labelMail.classList.add("text-red-300");
+          labelMail.classList.remove("text-neutral-100");
+          labelPassword.classList.add("text-red-300");
+          labelPassword.classList.remove("text-neutral-100");
+          inputMail.classList.add("border-red-300");
+          inputMail.classList.remove("border-neutral-100");
+          inputPassword.classList.add("border-red-300");
+          inputPassword.classList.remove("border-neutral-100");
+          inputMail.placeholder = "Rellene la casilla";
+          inputPassword.placeholder = "Rellene la casilla";
+          inputMail.classList.add("placeholder-red-200");
+          inputPassword.classList.add("placeholder-red-200");
+          alert("HAS DEJADO CASILLAS VACIAS");
+        } else if (inputPassword.value === "") {
+          labelMail.classList.add("text-red-300");
+          labelMail.classList.remove("text-neutral-100");
+          labelPassword.classList.add("text-red-300");
+          labelPassword.classList.remove("text-neutral-100");
+          inputMail.classList.add("border-red-300");
+          inputMail.classList.remove("border-neutral-100");
+          inputPassword.classList.add("border-red-300");
+          inputPassword.classList.remove("border-neutral-100");
+          inputMail.placeholder = "Rellene la casilla";
+          inputPassword.placeholder = "Rellene la casilla";
+          inputMail.classList.add("placeholder-red-200");
+          inputPassword.classList.add("placeholder-red-200");
+          alert("HAS DEJADO CASILLAS VACIAS");
+        } else {
+          window.location.href = "cursosusuario.html";
+        }
+      }
+      /*ENVIAR CON EL ENTER DESDE DENTRO DEL INPUT HA SIDO PREGUNTADO A LA IA*/
+      btnEnviar.addEventListener("click", envioForm);
+      inputNombre.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          envioForm();
+        }
+      });
+      inputApellido.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          envioForm();
+        }
+      });
+      inputMail.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          envioForm();
+        }
+      });
+      inputPassword.addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+          envioForm();
+        }
+      });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </body>
 </html>

@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso Tradicional</title>
+    <link rel="icon" href="imagenes/logo.png" />
+    <style>
+      /* Ocultar barra de scroll manteniendo funcionalidad */
+      html,
+      body {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE y Edge */
+      }
+      html::-webkit-scrollbar,
+      body::-webkit-scrollbar {
+        display: none; /* Chrome, Safari y Edge */
+      }
+    </style>
+  </head>
+  <body class="bg-blue-900 min-h-screen flex items-center justify-center p-4">
+    <div class="border border-slate-800 rounded-3xl p-10 max-w-4xl mx-auto bg-slate-900 shadow-black/20 shadow-lg">
+      <div class="flex items-center justify-between mb-8 gap-4">
+        <div>
+          <h1 class="text-4xl font-extrabold text-neutral-50 pb-3">Curso tradicional</h1>
+          <p class="text-slate-300 text-sm">
+            Responde las preguntas y envía el formulario cuando termines.
+          </p>
+        </div>
+        <button
+          onclick="window.location.href = 'cursosusuario.html'"
+          class="text-sm text-neutral-50 bg-blue-800 px-4 py-2 rounded-full hover:bg-amber-400 hover:text-slate-950 transition-all"
+        >
+          Volver
+        </button>
+      </div>
+
+      <form id="cuestionario" class="space-y-6 text-neutral-50">
+        <p class="text-slate-300 text-sm mb-4">Responde la pregunta y usa el botón para avanzar.</p>
+
+        <div class="bg-blue-950 p-6 rounded-3xl border border-slate-700">
+          <p id="numeroPregunta" class="text-slate-400 text-sm mb-3">Pregunta 1 de 15</p>
+          <h2 id="textoPregunta" class="font-semibold text-lg text-neutral-50 mb-4">
+            ¿Qué significa esta señal?
+          </h2>
+          <select id="respuesta" class="w-full rounded-lg p-3 bg-slate-800 text-white border border-slate-700" name="pregunta">
+            <option value="">Selecciona</option>
+            <option value="a">Ceda el paso</option>
+            <option value="b">Prohibido el paso</option>
+          </select>
+        </div>
+
+        <div class="pt-6 border-t border-slate-700 flex justify-between items-center">
+          <span id="mensaje" class="text-slate-400 text-sm">Solo una pregunta a la vez.</span>
+          <button
+            type="button"
+            id="btnSiguiente"
+            class="transition-all bg-amber-500 text-slate-950 font-bold py-3 px-8 rounded-full hover:bg-amber-400 cursor-pointer"
+          >
+            Siguiente
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const preguntas = [
+        { texto: '¿Qué significa esta señal?', a: 'Ceda el paso', b: 'Prohibido el paso' },
+        { texto: '¿Debes detenerte si la luz es roja?', a: 'Sí', b: 'No' },
+        { texto: '¿Cuál es la velocidad máxima en una zona urbana?', a: '50 km/h', b: '90 km/h' },
+        { texto: '¿Puedo adelantar por la derecha en autovía?', a: 'No', b: 'Sí' },
+        { texto: '¿Qué haces si hay un peatón en un paso de cebra?', a: 'Continúo', b: 'Me detengo' },
+        { texto: '¿Qué indica una línea continua en el centro?', a: 'Prohibido adelantar', b: 'Adelantar permitido' },
+        { texto: '¿Es obligatorio usar cinturón en todo momento?', a: 'Sí', b: 'No' },
+        { texto: '¿Qué hacer en caso de lluvia intensa?', a: 'Reducir velocidad', b: 'Acelerar' },
+        { texto: '¿Dónde está permitido aparcar?', a: 'En una acera', b: 'En una zona señalizada' },
+        { texto: '¿Cuándo se usa el intermitente?', a: 'Al girar o cambiar de carril', b: 'Solo al aparcar' },
+        { texto: '¿Qué debes mirar antes de cambiar de carril?', a: 'Solo el espejo retrovisor', b: 'Espejos y ángulo muerto' },
+        { texto: '¿Qué significa una señal de límite de velocidad?', a: 'Velocidad mínima', b: 'Velocidad máxima' },
+        { texto: '¿Cuándo se usa la luz de emergencia?', a: 'Al parar en emergencia', b: 'Cuando voy rápido' },
+        { texto: '¿Qué hacer si un vehículo de emergencia se acerca?', a: 'Continuar', b: 'Apartarse y dejarlo pasar' },
+        { texto: '¿Qué debes hacer en una rotonda?', a: 'Entrar sin ceder', b: 'Ceder a los que ya están dentro' }
+      ];
+
+      const numeroPregunta = document.querySelector('#numeroPregunta');
+      const textoPregunta = document.querySelector('#textoPregunta');
+      const respuesta = document.querySelector('#respuesta');
+      const btnSiguiente = document.querySelector('#btnSiguiente');
+      const mensaje = document.querySelector('#mensaje');
+      let index = 0;
+
+      function mostrarPregunta() {
+        const item = preguntas[index];
+        numeroPregunta.textContent = `Pregunta ${index + 1} de ${preguntas.length}`;
+        textoPregunta.textContent = item.texto;
+        respuesta.innerHTML = `
+          <option value="">Selecciona</option>
+          <option value="a">${item.a}</option>
+          <option value="b">${item.b}</option>
+        `;
+      }
+
+      function enviar() {
+        if (respuesta.value === '') {
+          respuesta.classList.add('border-red-300');
+          alert('Rellene la casilla');
+          return;
+        }
+
+        respuesta.classList.remove('border-red-300');
+
+        if (index < preguntas.length - 1) {
+          index += 1;
+          mostrarPregunta();
+          return;
+        }
+
+        alert('Formulario enviado. Gracias por completar el curso tradicional.');
+      }
+
+      btnSiguiente.addEventListener('click', enviar);
+      respuesta.addEventListener('change', function () {
+        if (respuesta.value !== '') {
+          respuesta.classList.remove('border-red-300');
+        }
+      });
+
+      mostrarPregunta();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </body>
+</html>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </body>
+</html>
