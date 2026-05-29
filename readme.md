@@ -22,4 +22,6 @@
 
 ### Desenvolupament i desplegamnet (app i servidor)
 
+
+
 ### Planificació (històries, sprints i diagrama de Gantt)

@@ -89,21 +89,20 @@
         if (opcion === "tradicional") {
           btnTradicional.classList.add("ring-2", "ring-amber-400");
           seleccion.textContent = "Has elegido el Curso tradicional.";
+          window.location.href("curso-tradicional.html");
         } else {
           btnVideos.classList.add("ring-2", "ring-amber-400");
           seleccion.textContent = "Has elegido el Curso con videos.";
         }
       }
 
-      btnTradicional.addEventListener("click", () =>
-        marcarCurso("tradicional"),
-      );
+      btnTradicional.addEventListener("click", () => marcarCurso("tradicional"));
       btnVideos.addEventListener("click", () => marcarCurso("videos"));
 
       document.querySelector("#btnContinuar").addEventListener("click", () => {
         if (!curso) {
           alert("Por favor, selecciona un curso antes de continuar.");
-          return;
+          return; 
         }
         alert(
           "Continuando con el " +
