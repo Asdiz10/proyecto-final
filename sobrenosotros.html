@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="cat">
+<html lang="es" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,16 +9,172 @@
       /* Ocultar barra de scroll manteniendo funcionalidad */
       html,
       body {
-        scrollbar-width: none; /* Firefox */
-        -ms-overflow-style: none; /* IE y Edge */
+        scrollbar-width: none;
+        -ms-overflow-style: none;
       }
       html::-webkit-scrollbar,
       body::-webkit-scrollbar {
-        display: none; /* Chrome, Safari y Edge */
+        display: none;
       }
     </style>
   </head>
-  <body>
+  <body
+    class="bg-blue-950 scroll [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] text-white"
+  >
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <header
+      class="fixed w-full z-999 flex justify-between py-6 bg-slate-900/95 px-10 shadow-xl"
+    >
+      <div
+        class="transition-all flex text-neutral-50 font-extrabold text-3xl cursor-pointer tracking-wider hover:scale-105"
+        onclick="window.location.href = 'index.html'"
+      >
+        <h1>Conduce<span class="text-amber-500">+</span></h1>
+      </div>
+      <nav class="flex gap-4">
+        <button
+          onclick="window.location.href = 'index.html'"
+          class="transition-all px-4 py-2 text-neutral-50 bg-slate-900 rounded font-semibold cursor-pointer hover:scale-105 hover:bg-neutral-50 hover:text-slate-900"
+        >
+          Inicio
+        </button>
+        <button
+          onclick="window.location.href = 'login.html'"
+          class="transition-all px-4 py-2 bg-amber-500 text-neutral-950 rounded font-bold tracking-wide cursor-pointer hover:scale-105 hover:bg-neutral-50 hover:text-amber-500"
+        >
+          Acceder
+        </button>
+      </nav>
+    </header>
+
+    <main class="pt-32 px-6 pb-16">
+      <section
+        class="max-w-5xl mx-auto border border-slate-800 rounded-3xl bg-slate-900/95 shadow-black/20 shadow-lg p-10"
+      >
+        <div class="mb-10">
+          <p
+            class="text-sm text-amber-500 uppercase font-bold tracking-[0.3em]"
+          >
+            Sobre nosotros
+          </p>
+          <h2 class="mt-4 text-4xl font-extrabold text-white">Conduce+</h2>
+          <p class="mt-3 text-slate-300 text-lg">Adam - David García</p>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-2 mb-10">
+          <div class="rounded-3xl bg-blue-950/90 p-8 border border-slate-700 hover:border-amber-500/50 transition-all">
+            <h3 class="text-2xl font-bold text-amber-500 mb-4">Adam</h3>
+            <p class="text-slate-300 leading-8">
+              Al haber realizado el examen teórico y haberlo aprobado, he visto la oportunidad de ayudar a la gente que va a tener que hacer el nuevo formato de examen de la DGT. Por eso he decidido crear una web que les permita realizar cuestionarios con vídeos, situaciones reales y todas las nuevas modalidades de preguntas que incluirá este nuevo examen.
+            </p>
+          </div>
+          <div class="rounded-3xl bg-blue-950/90 p-8 border border-slate-700 hover:border-amber-500/50 transition-all">
+            <h3 class="text-2xl font-bold text-amber-500 mb-4">David</h3>
+            <p class="text-slate-300 leading-8">
+              Aunque aún no he hecho el examen teórico todavía, lo tengo pensado realizar en poco tiempo. Como he visto junto a mi compañero que va a surgir un nuevo formato del examen y las herramientas de estudio que ya existen se van a quedar obsoletas, he decidido ir un paso por delante y empezar a desarrollar junto a Adam la herramienta que permita a gente como yo estudiar para el permiso de conducir.
+            </p>
+          </div>
+        </div>
+
+        <div class="space-y-10">
+          <div class="grid gap-6 lg:grid-cols-[1fr_1fr]">
+            <div class="rounded-3xl bg-blue-950/90 p-6 border border-slate-700">
+              <h3 class="text-2xl font-bold text-white mb-4">Objectius</h3>
+              <ul class="space-y-3 text-slate-300 list-disc list-inside">
+                <li>
+                  Ayudar a los nuevos candidatos que quieran obtener el nuevo
+                  modelo del examen de conducir.
+                </li>
+                <li>
+                  Crear una App Web que contenga cuestionarios para estudiar.
+                </li>
+                <li>
+                  Vender nuestra App Web a autoescuelas para así poder llegar a
+                  más gente.
+                </li>
+                <li>
+                  Crear una estructura de estudio innovadora para postularse al
+                  nuevo modelo del examen de conducir.
+                </li>
+              </ul>
+            </div>
+            <div class="rounded-3xl bg-blue-950/90 p-6 border border-slate-700">
+              <h3 class="text-2xl font-bold text-white mb-4">
+                Material del projecte
+              </h3>
+              <ul class="space-y-3 text-slate-300 list-disc list-inside">
+                <li>Visual Studio Code como interfaz de código.</li>
+                <li>Gemini como herramienta de revisión.</li>
+                <li>Duolingo como referencia de la aplicación web.</li>
+                <li>Raspberry Pi para alojar la web.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="rounded-3xl bg-blue-950/90 p-8 border border-slate-700">
+            <h3 class="text-2xl font-bold text-white mb-4">
+              Explicación del proyecto
+            </h3>
+            <p class="text-slate-300 leading-8">
+              <strong>Conduce+</strong> es una startup que nace para salvar
+              vidas atacando el problema olvidado de la seguridad vial: la
+              erosión del conocimiento. Si entre el 70% y el 90% de los
+              accidentes se deben al factor humano, es porque obtener el carnet
+              B se considera el final de la formación, cuando debería ser solo
+              el principio. Nuestra plataforma ofrece una solución educativa
+              continua que refresca normas, enseña a reaccionar ante emergencias
+              y actualiza al conductor sobre nuevas leyes de forma dinámica. El
+              proyecto tiene un futuro brillante porque convierte la seguridad
+              en un hábito digital, ofreciendo valor no solo al usuario, sino a
+              empresas de transporte y aseguradoras que buscan reducir costes
+              por siniestralidad. En un entorno de movilidad que cambia
+              constantemente, C+ es la garantía de que el conductor siempre
+              estará a la altura de las circunstancias.
+            </p>
+          </div>
+
+          <div class="rounded-3xl bg-blue-950/90 p-8 border border-slate-700">
+            <h3 class="text-2xl font-bold text-white mb-4">
+              Desarrollo y despliegue
+            </h3>
+            <p class="text-slate-300 leading-8">
+              Hemos utilizado una Raspberry Pi para alojar la web que hemos
+              creado. El proceso es muy sencillo: instalamos un servidor web en
+              la Raspberry Pi para permitir que la gente pueda entrar a ver
+              nuestra web vía la IP de la Raspberry en el navegador. El segundo
+              paso que seguimos fue instalar un servidor FTP para poder pasar
+              archivos desde uno de nuestros ordenadores del aula. Para poder
+              llevar a cabo este proceso tuvimos que utilizar un software
+              conocido, que es FileZilla. Como ya habíamos configurado el FTP en
+              la Raspberry, al poner su IP en FileZilla desde nuestro PC pudimos
+              subir los archivos necesarios para que nuestra web funcionase de
+              forma correcta. Una vez hecho esto desde un ordenador que esté
+              conectado a la misma red que la Raspberry ya puedes visualizar la
+              web.
+            </p>
+          </div>
+
+          <div class="rounded-3xl bg-blue-950/90 p-8 border border-slate-700">
+            <h3 class="text-2xl font-bold text-white mb-4">Planificación</h3>
+            <p class="text-slate-300 leading-8">
+              Consulta el diagrama de Gantt en el archivo
+              <span class="text-amber-500 font-semibold">readme.md</span> para
+              ver la planificación completa del proyecto, las historias y los
+              sprints.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-10 flex flex-wrap gap-4">
+          <button
+            onclick="window.location.href = 'index.html'"
+            class="transition-all bg-amber-500 text-slate-950 font-bold py-3 px-6 rounded-full hover:bg-amber-400"
+          >
+            Volver al inicio
+          </button>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

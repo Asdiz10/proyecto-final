@@ -125,65 +125,50 @@
       const btnEnviar = document.querySelector("#btnEnviar");
 
       function envioForm() {
+        const errores = [];
+
         if (inputNombre.value === "") {
+          errores.push("nombre");
           labelNombre.classList.add("text-red-300");
           labelNombre.classList.remove("text-neutral-100");
-          labelApellido.classList.add("text-red-300");
-          labelApellido.classList.remove("text-neutral-100");
-          inputNombre.classList.add("border-red-300");
+          inputNombre.classList.add("border-red-300", "placeholder-red-200");
           inputNombre.classList.remove("border-neutral-100");
-          inputApellido.classList.add("border-red-300");
-          inputApellido.classList.remove("border-neutral-100");
           inputNombre.placeholder = "Rellene la casilla";
-          inputApellido.placeholder = "Rellene la casilla";
-          inputNombre.classList.add("placeholder-red-200");
-          inputApellido.classList.add("placeholder-red-200");
-          alert("HAS DEJADO CASILLAS VACIAS");
-        } else if (inputApellido.value === "") {
-          labelNombre.classList.add("text-red-300");
-          labelNombre.classList.remove("text-neutral-100");
-          labelApellido.classList.add("text-red-300");
-          labelApellido.classList.remove("text-neutral-100");
-          inputNombre.classList.add("border-red-300");
-          inputNombre.classList.remove("border-neutral-100");
-          inputApellido.classList.add("border-red-300");
-          inputApellido.classList.remove("border-neutral-100");
-          inputNombre.placeholder = "Rellene la casilla";
-          inputApellido.placeholder = "Rellene la casilla";
-          inputNombre.classList.add("placeholder-red-200");
-          inputApellido.classList.add("placeholder-red-200");
-          alert("HAS DEJADO CASILLAS VACIAS");
-        } else if (inputMail.value === "") {
-          labelMail.classList.add("text-red-300");
-          labelMail.classList.remove("text-neutral-100");
-          labelPassword.classList.add("text-red-300");
-          labelPassword.classList.remove("text-neutral-100");
-          inputMail.classList.add("border-red-300");
-          inputMail.classList.remove("border-neutral-100");
-          inputPassword.classList.add("border-red-300");
-          inputPassword.classList.remove("border-neutral-100");
-          inputMail.placeholder = "Rellene la casilla";
-          inputPassword.placeholder = "Rellene la casilla";
-          inputMail.classList.add("placeholder-red-200");
-          inputPassword.classList.add("placeholder-red-200");
-          alert("HAS DEJADO CASILLAS VACIAS");
-        } else if (inputPassword.value === "") {
-          labelMail.classList.add("text-red-300");
-          labelMail.classList.remove("text-neutral-100");
-          labelPassword.classList.add("text-red-300");
-          labelPassword.classList.remove("text-neutral-100");
-          inputMail.classList.add("border-red-300");
-          inputMail.classList.remove("border-neutral-100");
-          inputPassword.classList.add("border-red-300");
-          inputPassword.classList.remove("border-neutral-100");
-          inputMail.placeholder = "Rellene la casilla";
-          inputPassword.placeholder = "Rellene la casilla";
-          inputMail.classList.add("placeholder-red-200");
-          inputPassword.classList.add("placeholder-red-200");
-          alert("HAS DEJADO CASILLAS VACIAS");
-        } else {
-          window.location.href = "cursosusuario.html";
         }
+
+        if (inputApellido.value === "") {
+          errores.push("apellido");
+          labelApellido.classList.add("text-red-300");
+          labelApellido.classList.remove("text-neutral-100");
+          inputApellido.classList.add("border-red-300", "placeholder-red-200");
+          inputApellido.classList.remove("border-neutral-100");
+          inputApellido.placeholder = "Rellene la casilla";
+        }
+
+        if (inputMail.value === "") {
+          errores.push("mail");
+          labelMail.classList.add("text-red-300");
+          labelMail.classList.remove("text-neutral-100");
+          inputMail.classList.add("border-red-300", "placeholder-red-200");
+          inputMail.classList.remove("border-neutral-100");
+          inputMail.placeholder = "Rellene la casilla";
+        }
+
+        if (inputPassword.value === "") {
+          errores.push("password");
+          labelPassword.classList.add("text-red-300");
+          labelPassword.classList.remove("text-neutral-100");
+          inputPassword.classList.add("border-red-300", "placeholder-red-200");
+          inputPassword.classList.remove("border-neutral-100");
+          inputPassword.placeholder = "Rellene la casilla";
+        }
+
+        if (errores.length > 0) {
+          alert("HAS DEJADO CASILLAS VACIAS");
+          return;
+        }
+
+        window.location.href = "cursosusuario.html";
       }
       /*ENVIAR CON EL ENTER DESDE DENTRO DEL INPUT HA SIDO PREGUNTADO A LA IA*/
       btnEnviar.addEventListener("click", envioForm);

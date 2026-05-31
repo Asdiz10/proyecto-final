@@ -28,8 +28,7 @@
             Inicio de usuario
           </h1>
           <p class="text-slate-300 text-sm">
-            Selecciona el curso que quieres realizar y continúa con tu
-            aprendizaje.
+            ¡Bienvenido de vuelta! ¿Qué curso quieres realizar?
           </p>
         </div>
         <button
@@ -63,23 +62,9 @@
         </button>
       </div>
 
-      <div class="mt-8 p-6 rounded-3xl bg-blue-950 border border-slate-700">
-        <p id="seleccion" class="text-slate-300 text-sm mb-4">
-          Selecciona una opción para continuar.
-        </p>
-        <button
-          id="btnContinuar"
-          class="transition-all bg-amber-500 text-slate-950 font-bold py-2 px-6 rounded-full hover:bg-amber-400 cursor-pointer"
-        >
-          Continuar
-        </button>
-      </div>
-    </div>
-
-    <script>
+      <script>
       const btnTradicional = document.querySelector("#curso-tradicional");
       const btnVideos = document.querySelector("#curso-videos");
-      const seleccion = document.querySelector("#seleccion");
       let curso = "";
 
       function marcarCurso(opcion) {
@@ -88,30 +73,15 @@
         btnVideos.classList.remove("ring-2", "ring-amber-400");
         if (opcion === "tradicional") {
           btnTradicional.classList.add("ring-2", "ring-amber-400");
-          seleccion.textContent = "Has elegido el Curso tradicional.";
-          window.location.href("curso-tradicional.html");
+          window.location.href = "curso-tradicional.html";
         } else {
           btnVideos.classList.add("ring-2", "ring-amber-400");
-          seleccion.textContent = "Has elegido el Curso con videos.";
+          window.location.href = "curso-videos.html";
         }
       }
 
       btnTradicional.addEventListener("click", () => marcarCurso("tradicional"));
       btnVideos.addEventListener("click", () => marcarCurso("videos"));
-
-      document.querySelector("#btnContinuar").addEventListener("click", () => {
-        if (!curso) {
-          alert("Por favor, selecciona un curso antes de continuar.");
-          return; 
-        }
-        alert(
-          "Continuando con el " +
-            (curso === "tradicional"
-              ? "Curso tradicional"
-              : "Curso con videos") +
-            ".",
-        );
-      });
     </script>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </body>

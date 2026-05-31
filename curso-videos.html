@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curso con Videos</title>
+    <link rel="icon" href="imagenes/logo.png" />
+    <style>
+      /* Ocultar barra de scroll manteniendo funcionalidad */
+      html,
+      body {
+        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* IE y Edge */
+      }
+      html::-webkit-scrollbar,
+      body::-webkit-scrollbar {
+        display: none; /* Chrome, Safari y Edge */
+      }
+    </style>
+  </head>
+  <body class="bg-blue-900 min-h-screen flex items-center justify-center p-4">
+    <div
+      class="border border-slate-800 rounded-3xl p-10 max-w-4xl mx-auto bg-slate-900 shadow-black/20 shadow-lg"
+    >
+      <div class="flex items-center justify-between mb-8 gap-4">
+        <div>
+          <h1 class="text-4xl font-extrabold text-neutral-50 pb-3">
+            Curso con videos
+          </h1>
+          <p class="text-slate-300 text-sm">
+            Responde las preguntas basadas en los videos y envía el formulario
+            cuando termines.
+          </p>
+        </div>
+        <button
+          onclick="window.location.href = 'cursosusuario.html'"
+          class="text-sm text-neutral-50 bg-blue-800 px-4 py-2 rounded-full hover:bg-amber-400 hover:text-slate-950 transition-all"
+        >
+          Volver
+        </button>
+      </div>
+
+      <form id="cuestionario" class="space-y-6 text-neutral-50">
+        <p class="text-slate-300 text-sm mb-4">
+          Mira el video y responde la pregunta. Usa el botón para avanzar.
+        </p>
+
+        <div class="bg-blue-950 p-6 rounded-3xl border border-slate-700">
+          <p id="numeroPregunta" class="text-slate-400 text-sm mb-3">
+            Pregunta 1 de 10
+          </p>
+
+          <div
+            id="videoContenedor"
+            class="mb-6 bg-slate-800 rounded-lg p-4 border border-slate-700 min-h-96 flex items-center justify-center"
+          >
+            <video src="/imagenes/video1.mp4"></video>
+          </div>
+
+          <h2
+            id="textoPregunta"
+            class="font-semibold text-lg text-neutral-50 mb-4"
+          >
+            ¿Qué acción debería tomar en esta situación?
+          </h2>
+          <select
+            id="respuesta"
+            class="w-full rounded-lg p-3 bg-slate-800 text-white border border-slate-700"
+            name="pregunta"
+          >
+            <option value="">Selecciona</option>
+            <option value="a">Opción A</option>
+            <option value="b">Opción B</option>
+            <option value="c">Opción C</option>
+          </select>
+        </div>
+
+        <div
+          class="pt-6 border-t border-slate-700 flex justify-between items-center"
+        >
+          <span id="mensaje" class="text-slate-400 text-sm"
+            >Solo una pregunta a la vez.</span
+          >
+          <button
+            type="button"
+            id="btnSiguiente"
+            class="transition-all bg-amber-500 text-slate-950 font-bold py-3 px-8 rounded-full hover:bg-amber-400 cursor-pointer"
+          >
+            Siguiente
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const preguntas = [
+        {
+          texto: "¿Qué acción debería tomar en esta situación?",
+          video: "/imagenes/video1.mp4",
+          a: "Acelerar, da tiempo a pasar",
+          b: "Frenar, hay un paso de peatón",
+          c: "Tocar el claxón",
+        },
+        {
+          texto: "¿Qué norma tiene preferencia en este escenario?",
+          video: "/imagenes/video2.mp4",
+          a: "Va a pasar alguien",
+          b: "Hay un STOP",
+          c: "Hay un coche a la izquierda",
+        },
+      ];
+
+      const numeroPregunta = document.querySelector("#numeroPregunta");
+      const textoPregunta = document.querySelector("#textoPregunta");
+      const videoContenedor = document.querySelector("#videoContenedor");
+      const respuesta = document.querySelector("#respuesta");
+      const btnSiguiente = document.querySelector("#btnSiguiente");
+      const mensaje = document.querySelector("#mensaje");
+      let i = 0;
+
+      function mostrarPregunta() {
+        const item = preguntas[i];
+        numeroPregunta.textContent = `Pregunta ${i + 1} de ${preguntas.length}`;
+        textoPregunta.textContent = item.texto;
+
+        const videoHtml =
+          item.video &&
+          (item.video.startsWith("/") || item.video.startsWith("http"))
+            ? `
+            <video id="videoReproductor" muted controls playsinline controlsList="nodownload" class="w-full rounded-xl max-h-80" src="${item.video}">
+              Tu navegador no soporta reproducción de video.
+            </video>
+          `
+            : `
+            <div class="text-center w-full">
+              <p class="text-slate-400 text-lg font-semibold mb-2">📹 Video ${i + 1}</p>
+              <p class="text-slate-500 text-sm">URL del video: ${item.video}</p>
+              <p class="text-slate-500 text-xs mt-2">Reemplaza esta sección con un &lt;iframe&gt; o &lt;video&gt;</p>
+            </div>
+          `;
+
+        videoContenedor.innerHTML = `
+          <div class="text-center w-full">
+            <p class="text-slate-400 text-lg font-semibold mb-4">Pregunta ${i + 1} / Video</p>
+            ${videoHtml}
+          </div>
+        `;
+
+        const reproductor = videoContenedor.querySelector("#videoReproductor");
+        if (reproductor) {
+          reproductor.muted = true;
+          reproductor.volume = 0;
+          reproductor.addEventListener("volumechange", () => {
+            reproductor.muted = true;
+            reproductor.volume = 0;
+          });
+        }
+
+        respuesta.innerHTML = `
+          <option value="">Selecciona</option>
+          <option value="a">${item.a}</option>
+          <option value="b">${item.b}</option>
+          <option value="c">${item.c}</option>
+        `;
+      }
+
+      function enviar() {
+        if (respuesta.value === "") {
+          respuesta.classList.add("border-red-300");
+          alert("Rellena la casilla");
+          return;
+        }
+
+        respuesta.classList.remove("border-red-300");
+
+        if (i < preguntas.length - 1) {
+          i += 1;
+          mostrarPregunta();
+          return;
+        }
+
+        alert("Formulario enviado. Gracias por completar el curso con videos.");
+      }
+
+      btnSiguiente.addEventListener("click", enviar);
+      respuesta.addEventListener("change", function () {
+        if (respuesta.value !== "") {
+          respuesta.classList.remove("border-red-300");
+        }
+      });
+
+      mostrarPregunta();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </body>
+</html>
