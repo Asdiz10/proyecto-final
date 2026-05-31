@@ -87,11 +87,11 @@
       const respuesta = document.querySelector('#respuesta');
       const btnSiguiente = document.querySelector('#btnSiguiente');
       const mensaje = document.querySelector('#mensaje');
-      let index = 0;
+      let i = 0;
 
       function mostrarPregunta() {
-        const item = preguntas[index];
-        numeroPregunta.textContent = `Pregunta ${index + 1} de ${preguntas.length}`;
+        const item = preguntas[i];
+        numeroPregunta.textContent = `Pregunta ${i + 1} de ${preguntas.length}`;
         textoPregunta.textContent = item.texto;
         respuesta.innerHTML = `
           <option value="">Selecciona</option>
@@ -109,8 +109,8 @@
 
         respuesta.classList.remove('border-red-300');
 
-        if (index < preguntas.length - 1) {
-          index += 1;
+        if (i < preguntas.length - 1) {
+          i += 1;
           mostrarPregunta();
           return;
         }

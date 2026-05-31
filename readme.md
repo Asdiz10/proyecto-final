@@ -4,10 +4,13 @@
 
 ### Objectius
 
-1. Redactar el pla d'empresa
-2. Creació de la app
-   - Creació del disseny
-   - Implementació de HTML,CSS,JS
+- Ayudar a los nuevos candidatos que quieran obtener el nuevo modelo del examen de conducir.
+
+- Crear una App Web que contenga cuestionarios para estudiar.
+
+- Vender nuestra App Web a autoescuelas para así poder llegar a más gente.
+
+- Crear una estructura de estudio innovadora para postularse al nuevo modelo del examen de conducir.
 
 ### Explicació del projecte
 
@@ -22,6 +25,6 @@
 
 ### Desenvolupament i desplegamnet (app i servidor)
 
-
+Hemos utilizado una Raspberry Pi para alojar la web que hemos creado. El proceso es muy sencillo, instalamos un servidor web en la Raspberry Pi para permitir que la gente pueda entrar a ver nuestra web via la IP de la Raspberry en el navegador. El segundo paso que seguimos fue instalar un servidor FTP para poder pasar archivos desde uno de nuestros ordenadores del aula. Para poder llevar a cabo este proceso tuvimos que utilizar un software conocido, que es FileZilla. Como ya habíamos configurado el FTP en la Raspberry, al poner su IP en FileZilla desde nuestro PC pudimos subir los archivos necesarios para que nuestra web funcionase de forma correcta. Una vez hecho esto desde un ordenador que esté conectado a la misma red que la Raspberry ya puedes visualizar la web.
 
 ### Planificació (històries, sprints i diagrama de Gantt)
