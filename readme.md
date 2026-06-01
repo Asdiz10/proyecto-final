@@ -19,8 +19,9 @@
 ### Material del projecte
 
 - Visual Studio Code com a interfície de codi.
+- Opus Clip como creador de clips con IA.
 - Gemini com a eina de revisió.
-- Duolingo com a referència de la aplicació web.
+- Duolingo y TodoTest com a referència de la aplicació web.
 - Raspberry Pi per allotjar la web.
 
 ### Desenvolupament i desplegamnet (app i servidor)
@@ -50,3 +51,21 @@ gantt
     Lliurament Pe6 :milestone, m2, 2025-05-08, 0d
     Presentació i Examen Final :milestone, m3, 2025-05-29, 0d
 ```
+
+### Webgrafia
+
+#### Marco Legal y Constitución
+- Portal CIRCE (Creación de Empresas): https://pae.pyme.gob.es/ – Trámites de constitución de la SL vía telemática.
+- Oficina Española de Patentes y Marcas (OEPM): https://www.oepm.es/ – Tasas oficiales para el registro de marca (Clases 9, 41 y 42).
+- BOE (Ley 18/2022 "Crea y Crece"): https://www.boe.es/ – Regulación sobre el capital social mínimo.
+
+#### Ayudas y Tecnología
+- Accelera Pyme - Kit Digital: https://www.acelerapyme.gob.es/ – Información sobre el bono digital de 3.000 € (Segmento III).
+- Amazon Web Services (AWS) Pricing: https://calculator.aws/ – Estimación de costes de servidores en la nube.
+- OpenAI API: https://openai.com/pricing – Costes de implementación de modelos de lenguaje IA.
+
+#### Hardware y Marketing
+- Apple Store (Sección Mac): https://www.apple.com/es/shop/buy-mac – Precios de referencia para equipos de desarrollo.
+- TikTok for Business: https://www.tiktok.com/business/ – Estrategias y costes de captación en redes sociales.
+- Apple & Google Developer Support: https://developer.apple.com/ – Comisiones por ventas en plataformas móviles (15%).
+
